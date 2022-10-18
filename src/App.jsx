@@ -7,10 +7,12 @@ import Offer from './Pages/Offers/Offer'
 import ForgotPassword from'./Pages/Sign/ForgotPassword'
 import SignIn from'./Pages/Sign/SignIn'
 import SignUp from'./Pages/Sign/SignUp'
+import Header from './Components/Header'
 const App = () => {
   return (
     <>
     <BrowserRouter>
+    <Header/>
       <Routes>
         <Route path="/" exact={true} element={<Home />} />
         <Route path="/Offers" element={<Offer />} />
