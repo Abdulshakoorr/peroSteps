@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { AiFillEyeInvisible,AiFillEye } from "react-icons/ai";
+import Authbtn from '../../Components/Authbtn';
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [formData, setFormData] = useState({
@@ -23,10 +24,10 @@ const SignIn = () => {
       </h1>
       <div className="sign-in-container w-full mx-auto p-8 items-center justify-center flex gap-8 flex-wrap mt-8">
         <div className=' lg:w-[40%] md:w-[60%] sm:w-[50%] shadow-md relative'>
-          <div className="dot rounded-full -z-10 md:w-24 md:h-24 bg-red-400 absolute -top-16 -left-4 shadow-xl">
+          {/* <div className="dot rounded-full -z-10 md:w-24 md:h-24 bg-red-400 absolute -top-16 -left-4 shadow-xl">
 
-          </div>
-          <img src="../../../images/Untitled design.png" alt="sign in img"  className='h-full w-full cover'/>
+          </div> */}
+          <img src="../../../images/signin.png" alt="sign in img"  className='h-full w-full cover'/>
         </div>
         <div className="form px-16 lg:w-[50%] md:w-[60%] sm:w-[50%]">
           <form>
@@ -49,6 +50,12 @@ const SignIn = () => {
               </p>
             </div>
             <button type='submit' className='w-full text-center bg-blue-600 text-white px-6 py-2 rounded font-medium mt-4 uppercase shadow-xl hover:bg-blue-700 transition duration-200 ease-in-out'>Sign in</button>
+            <div className="or mt-2 flex items-center before:border-t before:flex-1 before:border-gray-300 after:border-t after:flex-1 after:border-gray-300">
+              <p className='text-center px-6'>
+                OR
+              </p>
+            </div>
+              <Authbtn/>
           </form>
         </div>
       </div>
