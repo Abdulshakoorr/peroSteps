@@ -19,9 +19,9 @@ function pathMatchRoute (route) {
         </div>
         <nav className="menu-container">
           <ul className='flex gap-4'>
-            <li className={` cursor-pointer py-3 text-sm font-semibold text-black border-b-[2px] border-b-transparent ${pathMatchRoute(" / ") && 'text-black border-b-red-600'}`} onClick={() => navigate("/")}>Home</li>
-            <li className={` cursor-pointer py-3 text-sm font-semibold text-black border-b-[2px] border-b-transparent ${pathMatchRoute(" /offers ") && 'text-black border-b-red-600'}`} onClick={() => navigate("/offers")}>Offers</li>
-            <li className={` cursor-pointer py-3 text-sm font-semibold text-black border-b-[2px] border-b-transparent ${pathMatchRoute(" /sign-in ") && "text-black border-b-red-600"}`} onClick={() =>navigate("/sign-in")}>Sign In</li>
+            <li className={` cursor-pointer py-3 text-sm font-semibold hover:text-[#0C999F] text-gray-400 border-b-[2px] border-b-transparent ${pathMatchRoute("/") && 'text-black border-b-[#0C999F]'}`} onClick={() => navigate("/")}>Home</li>
+            <li className={` cursor-pointer py-3 text-sm font-semibold hover:text-[#0C999F] text-gray-400 border-b-[2px] border-b-transparent ${pathMatchRoute("/offers") && 'text-black border-b-[#0C999F]'}`} onClick={() => navigate("/offers")}>Offers</li>
+            <li className={` cursor-pointer py-3 text-sm font-semibold hover:text-[#0C999F] text-gray-400 border-b-[2px] border-b-transparent ${pathMatchRoute("/sign-in") && "text-black border-b-[#0C999F]"}`} onClick={() =>navigate("/sign-in")}>Sign In</li>
           </ul>
         </nav>
      </header>   
