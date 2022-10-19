@@ -24,7 +24,7 @@ const ForgotPassword = () => {
         <div className="form px-16 lg:w-[50%] md:w-[60%] sm:w-[50%]">
           <form>
 
-            <input type="email" id="email" autoComplete='off' placeholder='Enter email' value={email} onChange={handleInput} className="w-full px-4 py-2 text-md outline-none transition ease-in-out border-gray-300 focus:border-gray-300 rounded"/>
+            <input type="email" id="email" autoComplete='off' placeholder='Enter email' value={email} onChange={handleInput} className="w-full px-4 py-2 text-md outline-none transition ease-in-out border-gray-300 focus:border-gray-300 rounded" required/>
             <div className="link-components px-2 text-center text-sm flex justify-between mt-6 flex-wrap">
               <p className='text-gray-600'>Don't have an account?
                 <Link to="/sign-up" className='text-blue-600'>Register</Link>

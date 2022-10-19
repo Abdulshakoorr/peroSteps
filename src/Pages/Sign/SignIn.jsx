@@ -32,9 +32,9 @@ const SignIn = () => {
         <div className="form px-16 lg:w-[50%] md:w-[60%] sm:w-[50%]">
           <form>
 
-            <input type="email" id="email" autoComplete='off' placeholder='Enter email' value={email} onChange={handleInput} className="w-full px-4 py-2 text-md outline-none transition ease-in-out border-gray-300 focus:border-gray-300 rounded"/>
+            <input type="email" id="email" required autoComplete='off' placeholder='Enter email' value={email} onChange={handleInput} className="w-full px-4 py-2 text-md outline-none transition ease-in-out border-gray-300 focus:border-gray-300 rounded"/>
             <div className="password mt-4 relative">
-              <input type={ showPassword ? 'text' :'password'} id="password" autoComplete='off' placeholder='Enter password' value={password} onChange={handleInput} className="w-full px-4 py-2 text-md outline-none transition ease-in-out border-gray-300 focus:border-gray-300 rounded"/>
+              <input type={ showPassword ? 'text' :'password'} required id="password" autoComplete='off' placeholder='Enter password' value={password} onChange={handleInput} className="w-full px-4 py-2 text-md outline-none transition ease-in-out border-gray-300 focus:border-gray-300 rounded"/>
               <span className='absolute right-2 top-3' onClick={()=> setShowPassword(!showPassword)}>
                 {
                   showPassword? <AiFillEye/>  :<AiFillEyeInvisible/>

@@ -2,6 +2,11 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { AiFillEyeInvisible,AiFillEye } from "react-icons/ai";
 import Authbtn from '../../Components/Authbtn';
+import { getAuth,createUserWithEmailAndPassword,updateProfile} from 'firebase/auth'
+import { db } from '../../firebaseConfig'
+import { serverTimestamp, setDoc,doc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
+
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [formData, setFormData] = useState({
@@ -10,12 +15,36 @@ const SignUp = () => {
     password: '',
   });
   const { name, email, password } = formData;
-
+  const navigate = useNavigate();
   function handleInput(e) {
     const id = e.target.id;
     const value = e.target.value;
     setFormData({...formData, [id]: value });
     // setFormData((prevState) => ({ ...prevState,[e.target.id]: e.target.value,}));
+  }
+
+  async function handleSubmit(e){
+    e.preventDefault();
+    
+    try {
+      const auth = getAuth();
+      const userCredential = await createUserWithEmailAndPassword(auth,email,password);
+
+      updateProfile(auth.currentUser,{
+        displayName: name
+      })
+
+      const user = userCredential.user;
+      const formDataCopy = [...formData];
+      delete formDataCopy.password;
+      formDataCopy.timestemp = serverTimestamp();
+
+      await setDoc(doc(db, "users", user.uid), formDataCopy)
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+
   }
 
   return (
@@ -28,12 +57,12 @@ const SignUp = () => {
           <img src="../../../images/signup.png" alt="sign up img"  className='h-full w-full cover'/>
         </div>
         <div className="form px-16 lg:w-[50%] md:w-[60%] sm:w-[50%]">
-          <form>
+          <form onSubmit={handleSubmit}>
 
-            <input type="text" id="name" autoComplete='off' placeholder='Enter full name' value={name} onChange={handleInput} className="w-full px-4 py-2 text-md outline-none transition ease-in-out border-gray-300 focus:border-gray-300 rounded mb-4"/>
-            <input type="email" id="email" autoComplete='off' placeholder='Enter email' value={email} onChange={handleInput} className="w-full px-4 py-2 text-md outline-none transition ease-in-out border-gray-300 focus:border-gray-300 rounded"/>
+            <input type="text" id="name" required autoComplete='off' placeholder='Enter full name' value={name} onChange={handleInput} className="w-full px-4 py-2 text-md outline-none transition ease-in-out border-gray-300 focus:border-gray-300 rounded mb-4"/>
+            <input type="email" id="email" required autoComplete='off' placeholder='Enter email' value={email} onChange={handleInput} className="w-full px-4 py-2 text-md outline-none transition ease-in-out border-gray-300 focus:border-gray-300 rounded"/>
             <div className="password mt-4 relative">
-              <input type={ showPassword ? 'text' :'password'} id="password" autoComplete='off' placeholder='Enter password' value={password} onChange={handleInput} className="w-full px-4 py-2 text-md outline-none transition ease-in-out border-gray-300 focus:border-gray-300 rounded"/>
+              <input type={ showPassword ? 'text' :'password'} required id="password" autoComplete='off' placeholder='Enter password' value={password} onChange={handleInput} className="w-full px-4 py-2 text-md outline-none transition ease-in-out border-gray-300 focus:border-gray-300 rounded"/>
               <span className='absolute right-2 top-3' onClick={()=> setShowPassword(!showPassword)}>
                 {
                   showPassword? <AiFillEye/>  :<AiFillEyeInvisible/>
