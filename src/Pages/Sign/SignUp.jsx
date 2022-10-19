@@ -5,7 +5,8 @@ import Authbtn from '../../Components/Authbtn';
 import { getAuth,createUserWithEmailAndPassword,updateProfile} from 'firebase/auth'
 import { db } from '../../firebaseConfig'
 import { serverTimestamp, setDoc,doc } from 'firebase/firestore';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false)
@@ -15,15 +16,20 @@ const SignUp = () => {
     password: '',
   });
   const { name, email, password } = formData;
-  const navigate = useNavigate();
+
+  // const navigate = useNavigate();
+  
   function handleInput(e) {
-    const id = e.target.id;
-    const value = e.target.value;
-    setFormData({...formData, [id]: value });
+    // const id = e.target.id;
+    // const value = e.target.value;
+    // setFormData({...formData, [id]: value });
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value, }));
     // setFormData((prevState) => ({ ...prevState,[e.target.id]: e.target.value,}));
   }
 
-  async function handleSubmit(e){
+  async function handleSubmit(e) {
     e.preventDefault();
     
     try {
@@ -35,14 +41,15 @@ const SignUp = () => {
       })
 
       const user = userCredential.user;
-      const formDataCopy = [...formData];
+      const formDataCopy = {...formData};
       delete formDataCopy.password;
-      formDataCopy.timestemp = serverTimestamp();
+      formDataCopy.timestemp = serverTimestamp()
 
-      await setDoc(doc(db, "users", user.uid), formDataCopy)
-      navigate("/");
+      await setDoc(doc(db ,"users" ,user.uid), formDataCopy);
+      // toast.success('sign up was successful')
+      // navigate("/");
     } catch (error) {
-      console.log(error);
+      toast.error("something went wrong with registration")
     }
 
   }
