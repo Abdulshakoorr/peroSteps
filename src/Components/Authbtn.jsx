@@ -9,7 +9,7 @@ import { db } from '.././firebaseConfig'
 
 const Authbtn = () => {
 const navigate = useNavigate()
- async function ongoogleClick () {
+async function ongoogleClick () {
     try {
       const auth = getAuth();
       const provider =new GoogleAuthProvider();
