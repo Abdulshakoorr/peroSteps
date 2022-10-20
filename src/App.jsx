@@ -10,6 +10,7 @@ import ForgotPassword from'./Pages/Sign/ForgotPassword'
 import SignIn from'./Pages/Sign/SignIn'
 import SignUp from'./Pages/Sign/SignUp'
 import Header from './Components/Header'
+import PrivateRout from './Components/PrivateRout';
 const App = () => {
   return (
     <>
@@ -18,7 +19,9 @@ const App = () => {
       <Routes>
         <Route path="/" exact={true} element={<Home />} />
         <Route path="/Offers" element={<Offer />} />
-        <Route path="/profile" exact={true} element={<Profile />} />
+        <Route path='/profile' element={<PrivateRout/>}>
+          <Route path="/profile" exact={true} element={<Profile />} />
+        </Route>
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
