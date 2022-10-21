@@ -9,7 +9,7 @@ import { db } from '.././firebaseConfig'
 
 const Authbtn = () => {
 const navigate = useNavigate()
-async function ongoogleClick () {
+const ongoogleClick = async ()=>  {
     try {
       const auth = getAuth();
       const provider =new GoogleAuthProvider();
@@ -26,7 +26,7 @@ async function ongoogleClick () {
           timestamp: serverTimestamp(),
         });
       }
-        navigate("/")
+        navigate("/");
     } catch (error) {
       toast.error('did not authorized with google');
       console.log(error);

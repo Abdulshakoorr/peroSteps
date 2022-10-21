@@ -1,14 +1,12 @@
 import React from "react";
+import HeroSlider from "../../Components/HeroSlider";
 
 const Home = () => {
   return (
-    <div className="bg-red-500 mt-8">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem a pariatur,
-        quasi velit dignissimos nesciunt laborum atque? Suscipit libero quis
-        tenetur assumenda quaerat ipsum, amet fugiat voluptatem, velit non
-        facere.
-      </p>
+    <div className="text-center relative">
+      <h1 className="heading absolute text-6xl font-bold font-serif top-14 left-64 text-white">“We’re the key <br /> to your new home.”</h1>
+      <HeroSlider/>
+      <p className="absolute text-sm font-normal font-serif bottom-24 text-white left-72 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Beatae aliquid deleniti, facilis, omnis quo ratione <br /> molestias eius fugit autem earum sed porro nisi hic <br /> est suscipit vero. Consequuntur, non iusto?</p>
     </div>
   );
 };

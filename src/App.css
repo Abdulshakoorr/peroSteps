@@ -1,3 +1,20 @@
 body{
 background: #9ECDCF;
 }
+.background{
+    background-image:url("../public/images/homebg.png");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.heading{
+  margin: 40px auto;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 70px;
+  font-weight: bold;
+  color: skyblue;
+  text-align: center;
+  text-shadow: 2px 3px 7px black, 
+      0 10px 1px black;
+}

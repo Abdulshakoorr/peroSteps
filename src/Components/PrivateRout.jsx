@@ -7,11 +7,8 @@ const PrivateRout = () => {
     if (checkingStatus) {
       return <h1>Loading...</h1>
     }
-     return (
-    <>
-        loggedIn? <Outlet/> : <Navigate to= "/sign-in" />
-    </>
-  )
+     return loggedIn? <Outlet/> : <Navigate to= "/sign-in" />
+   
 }
 
 export default PrivateRout

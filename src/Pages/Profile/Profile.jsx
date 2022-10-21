@@ -67,7 +67,7 @@ const onSubmit = async () => {
                 setChangeDetails((prev)=> !prev)
                 
                 }}>
-                  {changeDetails? "Changes Applied":"Edit"}</span></p> 
+                  {changeDetails? "Apply Changes":"Edit"}</span></p> 
               <p onClick={signOut} className='text-sm text-blue-500 cursor-pointer hover:text-red-700'>Sign Out</p> 
             </div>
           </form>
