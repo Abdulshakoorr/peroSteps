@@ -74,7 +74,7 @@ const HeroSlider = () => {
         <img src="https://images.pexels.com/photos/2236394/pexels-photo-2236394.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
          alt="" className='w-full h-[80%] mx-auto rounded shadow-xl shadow-black mt-8 contain center'/>
       </SwiperSlide>
-      <SwiperSlide className='h-[80vh]'>
+      <SwiperSlide className='h-[80vh] '>
         <img src="https://images.pexels.com/photos/2091166/pexels-photo-2091166.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
          alt="" className='w-full h-[80%] mx-auto rounded shadow-xl shadow-black mt-8 contain center'/>
       </SwiperSlide>
