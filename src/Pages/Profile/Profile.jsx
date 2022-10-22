@@ -13,6 +13,8 @@ import {db} from '../../firebaseConfig'
 import React,{useState} from 'react'
 import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
+import { FcHome } from "react-icons/fc";
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
   const auth = getAuth();
@@ -54,7 +56,7 @@ const onSubmit = async () => {
 }
   return (
     <>
-      <section>
+      <section className='text-center'>
         <h1 className='text-3xl font-serif text-center mt-8 font-semibold'>Profile</h1>
         <div className="form-container flex items-center justify-center ">
           <form className='w-full sm:w-[70%] md:w-[60%] lg:w-[40%] p-4 flex flex-col gap-2'>
@@ -72,6 +74,11 @@ const onSubmit = async () => {
             </div>
           </form>
         </div>
+        <Link to="/create-listing"> 
+          <button type="submit" className='px-4 mx-auto p-2 flex items-center justify-between gap-2 bg-blue-600 text-white rounded mt-6 shadow-2xl hover:bg-blue-800'>
+           <FcHome className='bg-white rounded-xl shadow-2xl'/> Sell Or Rent Your Home
+          </button>
+        </Link>
       </section>
     </>
   )
