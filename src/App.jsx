@@ -15,7 +15,7 @@ import CreateListing from './Pages/createlisting/CreateListing';
 import About from './Pages/About us/About';
 const App = () => {
   return (
-    <>
+    <div className='bg-white mx-auto'>
     <BrowserRouter>
     <Header/>
       <Routes>
@@ -45,7 +45,7 @@ const App = () => {
           pauseOnHover
           theme="dark"
         />
-    </>
+    </div>
   )
 }
 

@@ -2,10 +2,10 @@ import React from 'react'
 
 const AboutComp1 = () => {
   return (
-    <>
-      <div className='bg-white lg:mx-auto h-[80%] px-4 md:px-64 py-8'>
+    <div className='mx-auto'>
+      <div className='bg-white w-full lg:mx-auto h-[80%] px-4 md:px-64 py-8'>
         <h2 className='text-2xl font-serif font-bold md:text-5xl'>Who We Are?</h2>
-        <div className="w-full about-text-img flex items-center justify-center gap-8 sm:flex-nowrap flex-wrap">
+        <div className="w-full about-text-img flex items-center justify-center gap-4 md:flex-nowrap flex-wrap">
           <div className="img lg:w-1/2 md:w-2/3 w-full p-4 basis-2/4">
             <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="" className='rounded cover'/>
           </div>
@@ -27,7 +27,7 @@ const AboutComp1 = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

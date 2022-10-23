@@ -7,7 +7,7 @@ import ListedProperties from "../../Components/ListedProperties";
 const Home = () => {
   return (
     <>
-    <div className="text-center relative background container">
+    <div className="text-center background mx-auto bg-white">
       <HeroSlider/>
       <AboutComp1/>
       <ListedProperties/>

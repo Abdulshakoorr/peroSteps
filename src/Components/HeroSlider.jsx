@@ -9,7 +9,7 @@ import { Pagination,Autoplay } from "swiper";
 
 const HeroSlider = () => {
   return (
-    <>
+    <div className='mx-auto'>
     <h1 className="heading absolute hidden lg:block text-xl sm:text-2xl md:text-lg lg:text-6xl font-bold font-serif top-14 left-64 text-white">“We’re the key <br /> to your new home.”</h1>
       <div className='container  w-full h-[90vh] flex items-center justify-end'>
       <Swiper
@@ -86,7 +86,7 @@ const HeroSlider = () => {
     <p className='text-sm text-white lg:-mt-16 pb-16 shadow-xl shadow-black '>
       Lorem ipsum dolor, sit amet consectetur <br /> adipisicing elit. Perferendis sint possimus iste obcaecati pariatur illum, <br />  recusandae commodi a eius magnam fugit officiis <br />  impedit, minus dolor? Ipsum voluptatem eveniet beatae corporis.
     </p>
-  </>
+  </div>
   )
 }
 
