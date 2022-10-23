@@ -18,7 +18,7 @@ const Footer = () =>{
                     <button className="bg-blue-600 px-4 py-2 rounded-full text-white ml-2 shadow-lg">Send</button>
                 </div>
             </div>
-            <p className="text-sm text-center">
+            <p className="text-sm text-center py-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Inventore, mollitia maiores atque beatae debitis quia <br /> maxime consequatur obcaecati amet qui ratione <br /> dolore ipsam ipsum,  vero at pariatur ipsa fuga minima.
             </p> <hr /> 
             <p className="text-sm mt-4">copyright 2022 Abdul Shakoor</p>
