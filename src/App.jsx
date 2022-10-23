@@ -12,6 +12,7 @@ import SignUp from'./Pages/Sign/SignUp'
 import Header from './Components/Header'
 import PrivateRout from './Components/PrivateRout';
 import CreateListing from './Pages/createlisting/CreateListing';
+import About from './Pages/About us/About';
 const App = () => {
   return (
     <>
@@ -20,13 +21,16 @@ const App = () => {
       <Routes>
         <Route path="/" exact={true} element={<Home />} />
         <Route path="/Offers" element={<Offer />} />
+        <Route path="/about" element={<About />} />
         <Route path='/profile' element={<PrivateRout/>}>
           <Route path="/profile" exact={true} element={<Profile />} />
         </Route>
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/create-listing" element={<CreateListing />} />
+        <Route path="create-listing" element={<PrivateRout />} >
+          <Route path="/create-listing" element={<CreateListing />} />
+        </Route>
       </Routes>
     </BrowserRouter>
         <ToastContainer

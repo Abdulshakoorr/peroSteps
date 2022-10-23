@@ -8,6 +8,20 @@ background: #9ECDCF;
     background-size: cover;
     background-attachment: fixed;
 }
+.about-bg{
+    background-image:url("https://images.pexels.com/photos/176342/pexels-photo-176342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.offer-bg{
+    background-image:url("https://images.pexels.com/photos/4161619/pexels-photo-4161619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
 .heading{
   margin: 40px auto;
   font-family: 'Ubuntu', sans-serif;

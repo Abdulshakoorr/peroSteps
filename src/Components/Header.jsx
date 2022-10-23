@@ -50,6 +50,14 @@ const Header = () => {
             </li>
             <li
               className={` cursor-pointer py-3 text-sm font-semibold hover:text-[#0C999F] text-gray-400 border-b-[2px] border-b-transparent ${
+                pathMatchRoute("/about") && "text-black border-b-[#0C999F]"
+              }`}
+              onClick={() => navigate("/about")}
+            >
+              About
+            </li>
+            <li
+              className={` cursor-pointer py-3 text-sm font-semibold hover:text-[#0C999F] text-gray-400 border-b-[2px] border-b-transparent ${
                 pathMatchRoute("/offers") && "text-black border-b-[#0C999F]"
               }`}
               onClick={() => navigate("/offers")}
